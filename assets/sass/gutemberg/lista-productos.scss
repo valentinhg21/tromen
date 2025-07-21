@@ -1,0 +1,36 @@
+.block-list-products{
+    @import '../variables/variables';
+    @import '../components/fonts';
+    @import '../components/colors';
+    @import '../components/media';
+    padding-top: 40px !important;
+    @include media(md){
+        padding-top: 20px !important;
+    }
+    .container{
+        padding-top: 0;
+        #listProducts{
+            padding: 0;
+        }
+        .title{
+            h2{
+                color: $black-dark;
+                margin-bottom: 16px;
+                @include media(md){
+                    font-size: 24px;
+                }
+                @include media(sm){
+                    margin-bottom: 16px;
+                }
+            }
+        }
+
+    }
+    &:has(+ div) {
+        padding-bottom: 40px;
+        @include media(md){
+            padding-bottom: 0;
+        }
+  
+    }
+}

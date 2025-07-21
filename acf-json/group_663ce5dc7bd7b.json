@@ -1,0 +1,280 @@
+{
+    "key": "group_663ce5dc7bd7b",
+    "title": "Categoria",
+    "fields": [
+        {
+            "key": "field_678674cc30518",
+            "label": "Activar Ecommerce",
+            "name": "activar_ecommerce",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Si",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_66e83e5d10a3a",
+            "label": "Titulo",
+            "name": "titulo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ingresar titulo para la pagina de la categoria.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_663ce95fb5a8e",
+            "label": "Destacar",
+            "name": "destacar",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Seleccione si desea destacar la categoría. Ejemplo Premier.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Linea Premier": "Linea Premier",
+                "Linea black": "Linea black",
+                "Ninguno": "Ninguno"
+            },
+            "default_value": "Ninguno",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_68597a8ca7fdf",
+            "label": "Logo Black",
+            "name": "logo_black",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_663ce95fb5a8e",
+                        "operator": "==",
+                        "value": "Linea black"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_68597ac7a7fe0",
+            "label": "Texto Black",
+            "name": "texto_black",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_663ce95fb5a8e",
+                        "operator": "==",
+                        "value": "Linea black"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_68597ad4a7fe1",
+                    "label": "Texto",
+                    "name": "texto",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Fuente 'Orbital'",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_68597adca7fe2",
+                    "label": "Texto",
+                    "name": "texto_2",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Fuente ' Klavika Basic '",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_66cf498238e3b",
+            "label": "Seleccionar video",
+            "name": "seleccionar_video",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Se permite subir un archivo .mp4 o adjuntar Link de Youtube o Shorts de Youtube.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "Video",
+            "ui_off_text": "Youtube",
+            "ui": 1
+        },
+        {
+            "key": "field_66cf49a138e3c",
+            "label": "Youtube",
+            "name": "youtube",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ingresar URL de Youtube",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66cf498238e3b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66cf49a638e3d",
+            "label": "Video",
+            "name": "video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Ingresar vídeo.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66cf498238e3b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "product_cat"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/main-menu"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1750697373
+}

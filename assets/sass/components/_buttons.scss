@@ -1,0 +1,276 @@
+
+
+.button__container{
+    display: flex;
+    width: 100%;
+
+    
+}
+
+.btn{
+    padding: 12px 24px;
+    color: $white;
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    outline: none;
+    transition: $fast;
+    font-size: 14px;
+    border: none;
+    color: $black;
+    border: 1px solid $white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+
+    @include media(md){
+        min-width: 198px;
+    }
+    @include media(sm){
+    
+        min-width: 143px;
+        padding: 11px 22px;
+    }
+    @include media(xs){
+        font-size: 14px;
+    }
+    text-decoration: none !important;
+    &:hover{
+        background: transparent;
+        color: $white;
+
+    }
+    &.font-w-400{
+        font-weight: 400;
+    }
+}
+.btn-md{
+    padding: 10px 24px;
+}
+.btn-sm{
+    padding: 8px 32px;
+}
+.btn-w-lg{
+    min-width: 240px;
+}
+.btn.btn-red-transparent{
+    border-color: $red;
+    color: $red;
+    background: transparent;
+    position: relative;
+    &:hover{
+        color: $white;
+        background: $red;
+    }
+
+}
+.btn.btn-red-transparent-black{
+    border-color: $red;
+    color: $red;
+    background: transparent;
+    position: relative;
+    &:hover{
+        border-color: $black-dark;
+        color: $white;
+        background: $black-dark;
+    }
+
+}
+.btn-icon{
+    min-width:  205px;
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 17px;
+    @include media(sm){
+        padding: 9px 17px;
+    }
+    span{
+        flex: 1; 
+        text-align: center; 
+        transition: $fast;
+        @include media(xs){
+            font-size: 14px;
+        }
+    }
+    svg{
+        margin-right: 5px; 
+        *{
+            transition: $slow;
+        }
+    }
+}
+.btn.btn-red-transparent-icon{
+    border-color: $red;
+    background: transparent;
+    color: $red;
+    span{
+        color: $red;
+    }
+    svg{
+        *{
+
+            color: $red;
+
+        }
+        @include media(xs){
+            position: absolute;
+            left: 1rem;
+            margin-right: 0;
+        }
+    }
+    &:hover{
+        color: $white;
+        background: $red;
+        span{
+            color: $white;
+        }
+        svg{
+            *{
+                color: $white;
+            }
+        }
+    }
+}
+
+.btn.btn-red-transparent-icon-black{
+    border-color: $red;
+    background: transparent;
+    color: $red;
+    span{
+        color: $red;
+    }
+    svg{
+        *{
+
+            color: $red;
+        }
+    }
+    &:hover{
+        border-color: $black-dark;
+        color: $white;
+        background: $black-dark;
+        span{
+            color: $white;
+        }
+        svg{
+            *{
+                color: $white;
+            }
+        }
+    }
+}
+.btn.btn-red-icon{
+    border-color: $red;
+    background: $red;
+    span{
+        color: $white;
+    }
+    svg{
+        *{
+
+            color: $white;
+        }
+    }
+    &:hover{
+        
+        background: transparent;
+        span{
+            color: $red;
+        }
+        svg{
+            *{
+                color: $red;
+            }
+        }
+    }
+}
+
+.btn.btn-black{
+    background: $black-dark;
+    border-color: $black-dark;
+    color: $white;
+    &:hover{
+        background: $white;
+        color: $black-dark;
+        border-color: $white;
+    }
+}
+.btn.btn-black-to-red{
+    background: $black-dark;
+    border-color: $black-dark;
+    color: $white;
+    &:hover{
+        background: $red;
+        color: $white;
+        border-color: $red;
+    }
+}
+.btn.btn-transparent{
+    background: transparent;
+    color: $white;
+    &:hover{
+        background: $white;
+        color: $black !important;
+    }
+}
+.btn.btn-red{
+    border-color: $red;
+    color: $white;
+    background: $red;
+    &:hover{
+        color: $red;
+        background: transparent;
+    }
+}
+
+.btn.btn-red-black{
+    border-color: $red;
+    color: $white;
+    background: $red;
+    &:hover{
+        border-color: $black-dark;
+        background: $black-dark;
+        color: $white;
+    }
+}
+
+.btn.btn-only-text-red{
+    color: $red;
+    background: transparent;
+    border-color: transparent;
+    padding: 0;
+    svg{
+        margin-right: 1rem;
+    }
+}
+
+.adding{
+    
+}
+
+.loader-btn {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 

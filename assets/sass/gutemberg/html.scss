@@ -1,0 +1,11 @@
+.block-html{
+    @import '../variables/variables';
+    @import '../components/media';
+    @import '../components/colors';
+    @import '../components/fonts';
+
+    padding: 4rem 0;
+    @include media(sm){
+        padding: 2rem 0;
+    }
+}

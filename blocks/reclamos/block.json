@@ -1,0 +1,21 @@
+{
+    "name": "acf/reclamos",
+    "title": "Formulario de reclamos",
+    "description": "",
+    "style": "file:../../dist/blocks-styles/form.min.css",
+    "category": "contacto",
+    "viewScript": "file:./reclamos.js",
+    "icon": "<svg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'><path d='M187.523-205.538q-25.768 0-43.569-17.801-17.8-17.8-17.8-43.586v-426.15q0-25.786 17.8-43.586 17.801-17.801 43.569-17.801h584.954q25.768 0 43.569 17.801 17.8 17.8 17.8 43.586v426.15q0 25.786-17.8 43.586-17.801 17.801-43.569 17.801H187.523ZM480-477.923 163.077-685.23v418.153q0 10.769 6.923 17.692t17.692 6.923h584.616q10.769 0 17.692-6.923t6.923-17.692V-685.23L480-477.923Zm0-41.462 304-198.153H176l304 198.153ZM163.077-685.23v-32.308 450.461q0 10.769 6.923 17.692t17.692 6.923h-24.615V-685.23Z'/></svg>",
+    "keywords": ["reclamos", "bloque"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "reclamos.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "mode": false,
+        "inserter": true,
+        "reusable": true
+    }
+}

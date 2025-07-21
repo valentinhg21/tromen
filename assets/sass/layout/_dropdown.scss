@@ -1,0 +1,271 @@
+header {
+  .menu{
+    > li{
+      position: relative;
+    }
+  }
+  .menu-links-container {
+    .niveles-1{
+      @include media-down(md){
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: -17px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: $red;
+          transition: $fast;
+        }
+        &:hover{
+          &::before{
+            width: 110%;
+          }
+        }
+      }
+
+    }
+    .menu-item {
+
+      &.menu-item-has-children {
+        .drop-btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          a {
+            width: 90%;
+            display: flex;
+          }
+          i {
+            width: 10%;
+            font-size: 10px;
+            margin-left: 5px;
+            color: #000;
+          }
+        }
+  
+        > .sub-menu.level-0 {
+          position: absolute;
+          left: 0;
+          top: 37px;
+          width: 228px;
+          background: $white;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+  
+          opacity: 0; //TOQUE ESTO
+          z-index: -1; //TOQUE ESTO
+          visibility: hidden; //TOQUE ESTO
+          transition: $fast;
+          -webkit-box-shadow: 0px 9px 29px 0px rgba(0, 0, 0, 0.06);
+          -moz-box-shadow: 0px 9px 29px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 9px 29px 0px rgba(0, 0, 0, 0.06);
+
+          > .body-links {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            li{
+              margin-left: 0;
+              padding: 8px 20px;
+              display: flex;
+              flex-direction: column;
+              transition: $fast;
+              &:hover:not(.cat-feature){
+                background: $white-header;
+                padding-left: 2rem;
+                a{
+                  color: $red;
+                }
+              }
+              a{
+                width: 100%;
+              }
+              &.cat-feature{
+                border-top: 1px solid $white-header;
+                padding: 8px 4px;
+
+                a{
+                  border: 1px solid $red;
+                  color: $red;
+                  padding: 8px 14px;
+                }
+                &:hover{
+                  a{
+                    background: $red;
+                    color: $white !important;
+                  }
+                }
+              }
+            }
+            li > a{
+              color: $black-dark;
+            }
+          }
+        }
+
+      }
+    }
+    .menu__container {
+      .menu {
+        a {
+          transition: $fast;
+        }
+        i {
+          transition: $fast;
+        }
+        .niveles-1 {
+          > .drop-btn {
+            &:hover {
+              i {
+                color: $red !important;
+              }
+            }
+          }
+        }
+        > .dropdown {
+          .drop-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $white;
+            i {
+              color: $white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            &:hover {
+              a,
+              i {
+                color: $red;
+              }
+            }
+          }
+        }
+
+        // CLASES INDEPENDIENTE
+        .active-submenu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            z-index: 99 !important;
+        }
+        .active-color{
+            > a{
+                color: $red !important;
+            }
+            > .drop-btn{
+                a,i{
+                    color: $red !important;
+                }
+            }
+    
+        }
+        .product-li{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-left: 0;
+          padding: 0;
+          background: $white-header;
+          position: relative;
+          cursor: pointer;
+          transition: $fast;
+          .menu-item-img {
+            height: 100%;
+            overflow: hidden;
+            picture,
+            img {
+              object-fit: cover;
+              transition: $fast;
+            }
+          }
+          button{
+            position: absolute;
+            bottom: .9rem;
+            right: 1rem;
+            background: $red;
+            outline: none;
+            border: 0;
+            border-radius: 6px;
+            width: 24px;
+            height: 24px;
+            transition: $fast;
+
+            > i{
+              color: $white !important;
+            }
+          }
+          a {
+            color: $black-dark !important;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 16px 0 !important;
+          }
+          &:hover {
+            picture,
+            img {
+              transform: scale(1.1);
+            }
+            background: $white-header-hover;
+            button{
+              background: $black-dark;
+            }
+          }
+        }
+        .first-child{
+          > .body-links {
+           > li:nth-child(1){
+               > .drop-btn{
+     
+                  a,i{
+                   color: $red !important;
+                 }
+               }
+               > ul {
+                 opacity: 1 !important;
+                 visibility: visible !important;
+                 z-index: 99 !important;
+                 > .body-links {
+                   > li:nth-child(1){
+                       .drop-btn{
+                 
+                         a,i{
+                           color: $red !important;
+                         }
+                       }
+
+                       > ul {
+                         opacity: 1 !important;
+                         visibility: visible !important;
+                         z-index: 99 !important;
+                       }
+                   }
+                 
+                 }
+               }
+           }
+         }
+       }
+      }
+    }
+  }
+}
+
+header.scrolling {
+  .menu-links-container {
+    .menu__container {
+      .menu {
+        > .dropdown {
+          .drop-btn {
+            i {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

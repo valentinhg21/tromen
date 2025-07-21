@@ -1,0 +1,139 @@
+.csv{
+    @import '../variables/variables';
+    @import '../components/fonts';
+    @import '../components/media';
+    @import '../components/colors';
+    padding: 40px 0;
+    .content{
+        @include media(lg){
+            overflow-x: auto; /* Permite el desplazamiento horizontal si la tabla es más ancha que el contenedor */
+            -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
+    
+        }
+        .group{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include media(sm){
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+            .button__container{
+                margin-top: 0 !important;
+                justify-content: flex-end;
+                align-items: center;
+                @include media(sm){
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+    table{
+        *{
+            color: $black-dark;
+        }
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+
+        th,td{
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        td{
+            font-size: 14px;
+        }
+
+        th{
+            background-color: #f4f4f4;
+            color: #333;
+            font-weight: bold;
+
+        }
+
+
+
+
+        tr:nth-child(even){
+            background-color: #f9f9f9;
+       
+
+        }
+
+        tr{
+            transition: $fast;
+            &:hover{
+                background-color: #f1f1f1;
+            }
+        }
+    }
+    .search-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .search{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            input{
+                border: 1px solid #DBDBDB;
+                border-radius: 4px;
+                height: 40px;
+                padding: 0 1rem;
+                width: 100%;
+                color: $black-dark;
+                outline: none;
+                transition: $fast;
+                font-size: 1rem;
+                font-weight: 300;
+
+                &::placeholder{
+                    color: rgba(0, 0, 0, 0.50);
+                }
+                &:focus{
+                  
+                    border: 1px solid $black-dark;
+                }
+            }
+            svg,i{
+                position: absolute;
+                right: 1rem;
+                top: .8rem;
+                color: $black-dark;
+            }
+            
+            .search-remove{
+                display: none;
+                cursor: pointer;
+                &.active{
+                    display: block;
+                }
+            }
+
+        }
+
+        &.active{
+            .search{
+                .search-remove{
+                    display: block;
+                }
+                .search-icon{
+                    display: none;
+                }
+            }
+        }
+
+
+    }
+    .no-results{
+        font-size: 14px;
+        margin: 10px 2px;
+    }
+}

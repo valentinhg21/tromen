@@ -1,0 +1,63 @@
+{
+    "key": "group_680a55113ff26",
+    "title": "[ETIQUETAS] Productos",
+    "fields": [
+        {
+            "key": "field_680a551116aec",
+            "label": "Color del fondo",
+            "name": "color_del_fondo",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#e2252d",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_680a56417db0e",
+            "label": "Color del texto",
+            "name": "color_del_texto",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FFFF",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "product_tag"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1745508004
+}

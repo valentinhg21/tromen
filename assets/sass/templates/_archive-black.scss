@@ -1,0 +1,296 @@
+.archive-black {
+  background: $black;
+  padding-top: 98px;
+  @include media(md) {
+    padding-top: 0;
+  }
+  .hero-custom {
+    position: relative;
+    
+    @include media(xs) {
+      min-height: 50dvh;
+    }
+    align-items: center;
+    .content {
+      text-align: left;
+      padding-bottom: 0;
+      width: 100%;
+      max-width: 100%;
+      @include media(md) {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      picture,img{
+        max-width: 500px;
+        width: 100%;
+        @include media(md){
+            max-width: 65%;
+        }
+      }
+      h1 {
+        font-size: 96px;
+        font-family: $klavika;
+        font-weight: 600;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        position: relative;
+        left: -80px;
+        margin-bottom: 20px;
+        @include media(md){
+          left: -10px;
+          font-size: 56px;
+        }
+        @include media(sm) {
+          left: -10px;
+          margin-bottom: 10px;
+          font-size: 48px;
+        }
+      }
+      .desc{
+        display: flex;
+        flex-direction: column;
+        max-width: 570px;
+        width: 100%;
+        margin-top: 30px;
+        padding-left: 60px;
+        @include media(md){
+            margin-top: 1rem;
+            padding-left: 0;
+            justify-content: center;
+            align-items: center;
+        }
+      }
+      p{
+        font-size: 42px;
+        font-family: $klavika-display;
+        margin-bottom: 0;
+        @include media(sm){
+          font-size: 28px;
+          
+        }
+        span{
+            font-size: 40px;
+            font-family: $orbital;
+            @include media(sm){
+                font-size: 26px;
+            }
+        }
+      }
+    }
+    @include media(md){
+        &::before{
+            @include bg-presets();
+            top: 0;
+            left: 0;
+            background: rgba(29, 29, 27, 0.63);
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+
+
+
+  }
+
+  .archive-products-container {
+    background: $black;
+    padding-bottom: 0;
+    // padding-bottom: 62px;
+
+    position: relative;
+    padding-top: 0;
+    @include media(md) {
+      padding-top: 0;
+    }
+
+
+    .description-cat {
+      padding-bottom: 103px;
+      @include media(md) {
+        padding-bottom: 60px;
+      }
+      @include media(sm) {
+        padding-bottom: 30px;
+      }
+      p {
+        font-size: 32px;
+        font-family: $klavika-display;
+        font-weight: 400;
+        text-align: center;
+        max-width: 841px;
+        width: 100%;
+        margin: 0 auto;
+        @include media(md) {
+          font-size: 24px;
+          padding: 0 5rem;
+        }
+        @include media(sm) {
+          font-size: 20px;
+          padding: 0 1rem;
+        }
+        @include media(xs) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .list-products {
+      padding: 150px 0;
+      display: grid;
+      gap: 1rem;
+      scroll-margin-top: 200px; /* Ajusta según la cantidad de espacio que desees agregar */
+      @include media(md){
+        padding-top: 30px;
+        padding-bottom: 50px;
+      }
+      .row {
+        gap: 2rem;
+        justify-items: center;
+        @include media(sm) {
+          gap: 2rem;
+        }
+        row-gap: 150px;
+        @include media(md){
+          row-gap: 34px;
+        }
+  
+        .product-item{
+          max-width: 470px;
+          width: 100%;
+          @include media(md){
+            max-width: 340px;
+          }
+          @include media(xs){
+            max-width: 250px;
+          }
+          &:nth-child(odd){
+            // background: green;
+            // padding-right: 80px;
+            // padding-left: 80px;
+          }
+          &:nth-child(even){
+            // background: purple;
+            // padding-left: 80px;
+            // padding-right: 80px;
+          }
+        }
+      }
+      @include media(sm) {
+        .product-image {
+          height: 251px;
+          @include media(xs) {
+            height: 180px;
+          }
+        }
+      }
+      .product-card {
+        position: relative;
+        padding: 0rem;
+        border: 1px solid transparent;
+        background: transparent;
+        justify-content: space-between;
+        @include media(sm){
+          // padding: 6px;
+          // padding-bottom: 12px;
+        }
+        span:not(.tag-text){
+          color: $white;
+          font-size: 1rem;
+          padding: 10px 14px;
+          text-transform: uppercase;
+          margin-top: 1rem;
+          @include media(md) {
+            display: none;
+          }
+        }
+        .product-image {
+          margin-bottom: 0;
+          height: 382px;
+          @include media(lg) {
+            height: 350px;
+          }
+          @include media(md) {
+            height: 250px;
+          }
+          @include media(xs) {
+            height: 180px;
+          }
+          picture,
+          img {
+            object-fit: cover;
+            object-position: center;
+          }
+          // &::before {
+          //   @include bg-presets();
+          //   bottom: 0;
+          //   left: 0;
+          //   width: 100%;
+          //   height: 40%;
+          //   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 5) 100%);
+          // }
+        }
+        .product-body {
+          // background: green;
+          width: 100%;
+          padding: 40px 14px 30px 0;
+          // min-height: 120px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          border-bottom: 1px solid #1D1D1B;
+        //   margin-top: -5rem;
+          @include media(xs){
+            padding: 10px 6px 10px 0;
+          }
+          p {
+            color: $white;
+            font-size: 44px;
+            font-family: $orbital;
+            text-transform: lowercase;
+            font-weight: 700;
+            line-height: 100%;
+            &::first-letter {
+              text-transform: capitalize;
+            }
+            @include media(md) {
+              font-size: 22px;
+            }
+            @include media(xs) {
+              width: 80%;
+              font-size: 20px;
+            }
+          }
+          .permalink{
+            bottom: 30px;
+            right: 14px;
+            border: 1px transparent;
+            background: transparent;
+            font-size: 20px;
+            @include media(xs){
+              bottom: 10px;
+         
+            }
+          }
+
+        }
+        &:hover {
+          picture,
+          img {
+            transform: scale(1.02);
+          }
+          .permalink {
+            background: transparent;
+            i {
+              color: $white;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

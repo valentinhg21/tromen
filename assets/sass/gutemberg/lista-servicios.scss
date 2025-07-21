@@ -1,0 +1,77 @@
+.block-lista-servicios{    
+    @import '../variables/variables';
+    @import '../components/fonts';
+    @import '../components/colors';
+    @import '../components/media';
+    background: $gray-news;
+    padding: 90px 0;
+    @include media(sm){
+        padding: 40px 0;
+    }
+    .row{
+        row-gap: 40px;
+        column-gap: 40px;
+        @include media(sm){
+            row-gap: 40px;
+            column-gap: 40px;
+        }
+        @include media(xs){
+            row-gap: 30px;
+            column-gap: 20px;
+        }
+        .card-services{
+            display: grid;
+            grid-template-columns: .2fr 1.8fr;
+            height: 100%;
+            width: 100%;
+            column-gap: 2rem;
+            @include media(xs){
+          
+                column-gap: 5px;
+            }
+            align-items: center;
+            @include media(sm){
+                &:has(h3 + p){
+                
+                    align-items: flex-start;
+                }
+            }
+            .card-icon{
+                width: 40px;
+                height: 40px;
+                display: flex;
+                margin-right: 1rem;
+                @include media(xs){
+                    width: 30px;
+                    height: 30px;
+                    margin-right: .5rem;
+                }
+                picture,img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+
+
+
+
+
+                }
+            }
+            .card-text{
+                h3,p{
+                    font-size: 18px;
+                 
+                    margin-bottom: 0;
+                    font-weight: 350;
+                    @include media(xs){
+                        font-size: 13.5px;
+                    }
+                }
+                padding-right: 5rem;
+                @include media(xs){
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

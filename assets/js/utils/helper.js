@@ -1,0 +1,13 @@
+export const header = document.getElementById("main-header");
+export const hamburgers = document.querySelectorAll(".hamburger");
+export const body = document.querySelector("body");
+export const menuDesktop = document.getElementById('menu-menu');
+export const closeBtnRight = document.getElementById('btn-right');
+export const dropRight = document.querySelectorAll('.dropdown-right');
+export const menuHeaderRight = document.querySelector('.menu-header-right');
+export const searchContainer = document.querySelector('.search');
+export const search = document.querySelector('.search-results-block');
+export const searchBtn = document.getElementById('toggle-search');
+export const closeSearchBtn = document.getElementById('close-search-header');
+export const searchInput = document.getElementById('search-input');
+export const AJAX_URL = JSON.stringify(ajax_var.url).replace(/['"]+/g, "");

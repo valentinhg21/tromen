@@ -1,0 +1,115 @@
+.archive-product{
+    .hero-custom{
+        @include media(sm){
+            min-height: 36dvh;
+        }
+        @include media(xs){
+            min-height: 48dvh;
+        }
+        .video-container{
+            iframe{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                pointer-events: none; /* Evita la interacción con el video */
+                object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+                min-width: 100%; 
+                min-height: 100%;
+            
+            }
+
+        }
+        &.fade{
+            &::before{
+                @include gradient(right, 0.9);
+                height: 100%;
+                width: 50%;
+            }
+            &::after{
+                display: none;
+            }
+        }
+        .content{
+            max-width: 600px;
+            width: 100%;
+            h1{
+                font-family: $klavika;
+                font-weight: 600;
+                @include media-down(sm){
+                    font-size: 36px;
+                }
+                @include media(sm){
+                    font-size: 24px;
+                }
+                margin-bottom: 20px;
+            }
+            p{
+                margin-bottom: 40px;
+                font-weight: 400;
+            }
+            .subcategory-list{
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        }
+    }
+    .hero-description{
+        padding: 38px 0;
+        @include media(xs){
+            padding: 18px 0;
+        }
+        .content{
+            text-align: center;
+            p{
+                color: $black-dark;
+                margin-bottom: 20px;
+            }
+            .subcategory-list{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                list-style: none;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                li{
+                    @include media(xs){
+                        width: 100%;
+                    }
+               
+                }
+                a{
+                    width: 100%;
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+    .products{
+        display: none;
+    }
+    .archive-products-container{
+        padding-top: 40px;
+        padding-bottom: 100px;
+        @include media(xs){
+            padding-top: 0;
+            padding-bottom: 80px;
+        }
+        h2{
+            font-size: 24px;
+            @include media(sm){
+                font-size: 20px;
+            }
+            @include media(xs){
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+

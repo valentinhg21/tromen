@@ -1,0 +1,619 @@
+{
+    "key": "group_65691641bb1a4",
+    "title": "Bloque [ Formulario ]",
+    "fields": [
+        {
+            "key": "field_6569e6ab0877a",
+            "label": "Expandir - Formulario",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_6718fe8e3066e",
+            "label": "ID",
+            "name": "id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ingresar id para identificarlo en Tag Manager",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67a3ba67a1086",
+            "label": "Asunto",
+            "name": "asunto",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ingresar el comienzo del asunto",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "${USUARIO} recibida desde tromen.com"
+        },
+        {
+            "key": "field_6596e2aaee4f1",
+            "label": "Destinatario",
+            "name": "destinatario",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_67dc45cb0def5",
+            "label": "ID De la lista",
+            "name": "id_de_la_lista",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ingresar el ID de la lista de envialo simple",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65691641186c7",
+            "label": "Formulario",
+            "name": "formulario",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_6569d93419980": {
+                    "key": "layout_6569d93419980",
+                    "name": "una_columna",
+                    "label": "Una Columna",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6569d93f65d29",
+                            "label": "Formulario",
+                            "name": "formulario_content",
+                            "aria-label": "",
+                            "type": "flexible_content",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layouts": {
+                                "layout_6569d9e925444": {
+                                    "key": "layout_6569d9e925444",
+                                    "name": "campo",
+                                    "label": "Campo",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6569dbde9e41f",
+                                            "label": "Tipo",
+                                            "name": "tipo",
+                                            "aria-label": "",
+                                            "type": "button_group",
+                                            "instructions": "Especificar que tipo de dato recibira el campo.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "Texto": "Texto",
+                                                "Email": "Email",
+                                                "Numero": "Numero",
+                                                "Fecha": "Fecha",
+                                                "Mensaje": "Mensaje"
+                                            },
+                                            "default_value": "Texto",
+                                            "return_format": "value",
+                                            "allow_null": 0,
+                                            "layout": "horizontal"
+                                        },
+                                        {
+                                            "key": "field_65f89f44d6636",
+                                            "label": "Obligatorio*",
+                                            "name": "obligatorio",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1,
+                                            "ui_on_text": "Si",
+                                            "ui_off_text": "No",
+                                            "ui": 1
+                                        },
+                                        {
+                                            "key": "field_65a16fd0c87a2",
+                                            "label": "Caracteres",
+                                            "name": "caracteres",
+                                            "aria-label": "",
+                                            "type": "number",
+                                            "instructions": "Agregar cantidad de caracteres permitidos. Añadir 0 para no habilitar la función.",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_6569dbde9e41f",
+                                                        "operator": "==",
+                                                        "value": "Mensaje"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": 0,
+                                            "min": "",
+                                            "max": "",
+                                            "placeholder": "",
+                                            "step": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_65a16af948a64",
+                                            "label": "Placeholder",
+                                            "name": "placeholder",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_6569db28ee5f5",
+                                            "label": "Nombre",
+                                            "name": "nombre",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Insertar nombre del campo.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_67dc45045fce9",
+                                            "label": "ID",
+                                            "name": "id",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Agregar el ID del custom field de envialosimple",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                "layout_677bece507cbe": {
+                                    "key": "layout_677bece507cbe",
+                                    "name": "selector_de_productos",
+                                    "label": "Selector de Productos",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_677bece507cc0",
+                                            "label": "Obligatorio*",
+                                            "name": "obligatorio",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1,
+                                            "allow_in_bindings": 1,
+                                            "ui_on_text": "Si",
+                                            "ui_off_text": "No",
+                                            "ui": 1
+                                        },
+                                        {
+                                            "key": "field_677bf5b219f88",
+                                            "label": "Placeholder",
+                                            "name": "placeholder",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_677bece507cc3",
+                                            "label": "Nombre",
+                                            "name": "nombre",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Insertar nombre del campo.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_67a4bf3602737",
+                                            "label": "Lista de modelos",
+                                            "name": "lista_de_modelos",
+                                            "aria-label": "",
+                                            "type": "textarea",
+                                            "instructions": "Separar cada opción por una coma (,) ejemplo; opcion 1,opcion2,opcion3",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "rows": "",
+                                            "placeholder": "",
+                                            "new_lines": ""
+                                        },
+                                        {
+                                            "key": "field_67dc45845fcec",
+                                            "label": "ID",
+                                            "name": "id",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Agregar el ID del custom field de envialosimple",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 0,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                "layout_67239a5d2b9d7": {
+                                    "key": "layout_67239a5d2b9d7",
+                                    "name": "archivo",
+                                    "label": "Archivo",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_67239a5d2b9d9",
+                                            "label": "Obligatorio*",
+                                            "name": "obligatorio",
+                                            "aria-label": "",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 1,
+                                            "allow_in_bindings": 1,
+                                            "ui_on_text": "Si",
+                                            "ui_off_text": "No",
+                                            "ui": 1
+                                        },
+                                        {
+                                            "key": "field_67239a5d2b9dc",
+                                            "label": "Nombre",
+                                            "name": "nombre",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "Insertar nombre del campo.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "allow_in_bindings": 1,
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        },
+                                        {
+                                            "key": "field_67239a6b2b9dd",
+                                            "label": "Archivos permitidos",
+                                            "name": "archivos_permitidos",
+                                            "aria-label": "",
+                                            "type": "button_group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "Todo": "Todo",
+                                                "Documentos": "Documentos",
+                                                "Imagenes": "Imagenes"
+                                            },
+                                            "default_value": "",
+                                            "return_format": "value",
+                                            "allow_null": 0,
+                                            "allow_in_bindings": 0,
+                                            "layout": "horizontal"
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                "layout_6684296186e1b": {
+                                    "key": "layout_6684296186e1b",
+                                    "name": "checkbox",
+                                    "label": "checkbox",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_668429d086e1f",
+                                            "label": "Check",
+                                            "name": "check",
+                                            "aria-label": "",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "table",
+                                            "min": 0,
+                                            "max": 0,
+                                            "collapsed": "",
+                                            "button_label": "Add Row",
+                                            "rows_per_page": 20,
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_66842a0186e20",
+                                                    "label": "Nombre campo",
+                                                    "name": "nombre_campo",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "parent_repeater": "field_668429d086e1f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "key": "field_6684297486e1d",
+                                            "label": "Nombre",
+                                            "name": "nombre",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                "layout_6569e5ed9ad2a": {
+                                    "key": "layout_6569e5ed9ad2a",
+                                    "name": "boton",
+                                    "label": "Botón",
+                                    "display": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6569e5ed9ad2b",
+                                            "label": "Nombre",
+                                            "name": "nombre",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "Enviar",
+                                            "maxlength": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                }
+                            },
+                            "min": "",
+                            "max": "",
+                            "button_label": "Agregar Campo"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": 1,
+            "max": 1,
+            "button_label": "Seleccionar Columna"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/formulario"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1742489152
+}

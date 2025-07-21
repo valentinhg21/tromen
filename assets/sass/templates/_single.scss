@@ -1,0 +1,143 @@
+.single{
+    min-height: 76vh;
+    @include media(xs){
+        min-height: auto;
+    }
+    &.single-header-white{
+        margin-top: 77px;
+
+        @include media(md){
+            margin-top: 57px;
+        }
+        @include media(sm){
+            margin-top: 51px;
+        }
+    }
+
+    &.single-blog{
+        background: $gray-news;
+        .block-lista-articulos{
+            background: $gray-news;
+            padding-top: 45px;
+            padding-bottom: 86px;
+            @include media(md){
+                padding-top: 36px;
+                padding-bottom: 50px;
+            }
+            @include media(sm){
+                padding-top: 20px;
+                padding-bottom: 30px;
+            }
+            &.related{
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 50%; /* Comienza en el centro */
+                    width: 98%; /* Ocupa el 90% del ancho total, pero comienza en el 50%, así que debe ser la mitad de 90% */
+                    transform: translateX(-50%); /* Ajusta la posición hacia la izquierda */
+                    height: 1px;
+                    background-color: $black-dark;
+                }
+           
+            }
+            .row{
+                gap: 1rem;
+                @include media(sm){
+                    gap: 8px;
+                }
+            }
+            .lista-articulos-title{
+                color: $black-dark;
+                margin-bottom: 20px;
+                font-size: 24px;
+                @include media(sm){
+                    font-size: 20px;
+                }
+            }
+            .article-card{
+                .card{
+                    background: $white;
+                    .card-img{
+                        display: flex;
+                        height: 268px;
+                        picture,img{
+                            object-fit: cover;
+                            object-position: center;
+                            transition: $slow;
+                        }
+                        @include media(sm){
+                            height: 200px;
+                        }
+                        @include media(xs){
+                            height: 200px;
+                        }
+                        overflow: hidden;
+                    }
+                    .card-body{
+                        padding: 20px;
+                        transition: $slow;
+                        display: flex;
+                        flex-direction: column;
+                        @include media(sm){
+                            padding: 1rem;
+                        }
+                        h3{
+                            color: $red;
+                            font-size: 20px;
+                            transition: $slow;
+                            @include media(sm){
+                                font-size: 18px;
+                            }
+        
+                        }
+
+                        span{
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            color: $black-dark;
+                            margin-top: 10px;
+                        }
+                    }
+        
+                }
+                .card:not(.loader-card){
+                    &:hover{
+                        picture,img{
+                            transform: scale(1.2);
+                        }
+                        .card-body{
+                            background: #fafafa;
+        
+                        }
+                    }
+                }
+            }
+        }
+
+        .button__container{
+            margin-top: 50px;
+            margin-bottom: 150px;
+            @include media(md){
+                margin-top: 30px;
+                margin-bottom: 80px;
+            }
+
+        }
+    }
+}
+
+
+.single.page-404{
+    h1,h2,p{
+        color: $black-dark;
+    }
+
+    p{
+        font-size: 18px;
+        @include media(xs){
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,128 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    .popup-card{
+        position: relative;
+        max-width: 550px;
+        border-radius: 6px;
+        width: 100%;
+        min-height: 300px;
+        background: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+        
+        @include media(xs){
+            max-width: 96%;
+            padding: 1rem 0;
+        }
+        .popup-card-close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1rem;
+            cursor: pointer;
+            i{
+                color: $black-dark;
+                font-size: 20px;
+            }
+        }
+        .icon{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color:$white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            i{
+                color: $white;
+                font-size: 40px;
+          
+            }
+            &.success{
+                background-color:#3ee13e;
+            }
+            &.error{
+                background-color:#f13f3f;
+            }
+        }
+
+        .content{
+            padding: 0 2rem;
+            @include media(xs){
+                padding: 0 1rem;
+            }
+            h2,p{
+                color: $black-dark;
+               
+            }
+            h2{
+                margin-bottom: 20px;
+                font-weight: 600;
+                text-transform: uppercase;
+                @include media-down(md){
+                    font-size: 24px;
+                }
+                @include media(xs){
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+            }
+            p{
+                @include media-down(md){
+                    font-size: 18px;
+                }
+            }
+
+        }
+
+        .button__container{
+            button{
+                min-width: auto !important;
+            }
+        }
+    }
+
+    .popup-content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .content{
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+    }
+    .button__container{
+        margin-top: 24px;
+    }
+    &.show{
+        opacity: 1;
+        visibility: visible;
+        z-index: 400;
+        .popup-card{
+            animation: fade-in-bottom  1s;
+        }
+    }
+}

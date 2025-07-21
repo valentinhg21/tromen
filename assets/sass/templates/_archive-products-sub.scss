@@ -1,0 +1,492 @@
+.archive-subcategory{
+    padding-top: 77px;
+    padding-bottom: 138px;
+    @include media(md){
+        padding-top: 57px;
+        padding-bottom: 30px;
+    }
+    @include media(sm){
+        padding-top: 51px;
+        padding-bottom: 20px;
+    }
+    .container{
+        padding-top: 39px;
+        @include media(sm){
+            padding-top: 24px;
+        }
+    }
+    .woocommerce-breadcrumb{
+        margin-bottom: 18px;
+        color: $breadcrum;
+        a{
+            color: $breadcrum;
+        }
+        @include media(sm){
+            font-size: 14px;
+            margin-bottom: 10px;
+            a{
+                font-size: 14px;
+            }
+        }
+    }
+    .content{
+        @include media(sm){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1{
+            color: $black-dark;
+            font-size: 32px;
+            font-family: $klavika;
+            font-weight: 600;
+            text-transform:capitalize;
+        
+            span{
+                color: $black-dark;
+                text-transform:none;
+
+            }
+
+            @include media(sm){
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+
+    }
+    .description{
+        *{
+            color: $black-dark;
+        }
+        display: flex;
+        flex-direction: column;
+        max-width: 630px;
+        width: 100%;
+        p{
+            @include media-down(sm){
+                font-size: 18px;
+            }
+
+            margin-bottom: 20px;
+            @include media(sm){
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .list-categories{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        li{
+            color: $black-dark;
+            margin-right: 2rem;
+            text-transform: uppercase;
+            @include media(sm){
+                margin-right: 1.5rem;
+            }
+            &.premier{
+                order: 100;
+            }
+            &.subcat{
+                button{
+                    border: 0;
+                    outline: none;
+                    background: transparent;
+                    color: $black-dark;
+                    font-size: 14px;
+                    background: linear-gradient(to right, transparent, transparent), linear-gradient(to right, $red, $red,$red,);
+                    background-size: 100% 1px, 0 1px;
+                    background-position: 100% 100%, 0 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 400ms;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    padding: 3px 0;
+                    &:hover{
+                        background-size: 0 1px, 100% 1px;
+                        color: $red;
+                
+                    }
+                    &.active{
+                        background-size: 0 1px, 100% 1px;
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+    .list-products{
+        padding-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        scroll-margin-top: 200px; /* Ajusta según la cantidad de espacio que desees agregar */
+
+        @include media(sm){
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            .splide__slide{
+                .product-image{
+                    height: 251px;
+                    @include media(xs){
+                        height: 151px;
+                    }
+                }
+            }
+        }
+
+    }
+    .return{
+        a{
+            width: auto;
+            svg{
+                margin-right: 20px;
+            }
+        }
+    }
+    .filter-order{
+        border: 0;
+        outline: none;
+        background: transparent;
+        display: flex;
+        gap: 1rem;
+        cursor: pointer;
+        align-items: center;
+        z-index: 20;
+        span{
+            color: $black-dark;
+            font-size: 14px;
+            text-transform: uppercase;
+            @include media-custom(1100.5px){
+                display: none !important;
+            }
+            transition: $fast;
+        }
+        svg{
+           *{
+            color: $black-dark;
+            transition: $fast;
+           }
+ 
+        }
+        position: absolute;
+        bottom: .5rem;
+        right: 0;
+        @include media(sm){
+            position: relative;
+        }
+        &:hover{
+        
+            span{
+                color: $red;
+            }
+            svg{
+                *{
+                 color: $red;
+                }
+             }
+        }
+    }
+    .modal-backdrop-filter{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        background: rgba(0, 0, 0, 0.575);
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        overflow: hidden;
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            z-index: 9999;
+            .body{
+                transform: translate(0);
+            }
+        }
+        .body{
+            max-width: 420px;
+            width: 100%;
+            background: $white;
+            padding-top: 40px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 40px;
+            transition: 0.5s all ease-in-out;
+            transform: translate(1000px);
+            @include media(xs){
+              
+                max-width: 100%;
+            }
+            @include media(md){
+                padding-top: 60px;
+            }
+            .content-filter{           
+                height: 60dvh;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+                
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                
+                &::-webkit-scrollbar-thumb {
+                    background: #f1f1f1;
+                }
+                
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #f1f1f1;
+                }
+            }
+            .body-title{
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 22px;
+                h3,button{
+                    color: $black-dark;
+                    text-transform: uppercase;
+                }
+                h3{
+                    font-size: 18px;
+                }
+                button{
+                    border: 0;
+                    outline: 0;
+                    background: transparent;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    color: $black-filter;
+                    cursor: pointer;
+                    text-decoration: underline;
+                    i{
+                        color: $black-dark;
+                        font-size: 20px;
+                    }
+
+                    &#closeModal{
+                        @include media(md){
+                            font-size: 22px;
+                            top: 1rem;
+                            position: absolute;
+                            right: 1rem;
+                            i{
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+            // Dropdown
+            .dropdown-filter{
+                width: 100%;
+                padding: 22px 0;
+                border-top: 1px solid #E7E7E7;
+                .dropdown-title{
+                    font-size: 1rem;
+                    color: $red;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 0;
+                    outline: none;
+                    background: transparent;
+                    width: 100%;
+                    font-weight: 600;
+                    @include media(sm){
+                        font-size: 1rem;
+                    }
+                    i{
+                        color: $red;
+                        font-size: 12px;
+                    }
+                    cursor: pointer;
+                }
+                ul{
+                    flex-direction: column;
+                    list-style: none;
+                    margin-top: 22px;
+                    display: none;
+                    &.active{
+                        display: flex;
+                    }
+                    li{
+                        animation: slide-in-bottom 1s;
+                        margin-bottom: .5rem;
+                        button{
+                            font-size: 14px;
+                            border: 0;
+                            outline: none;
+                            background: transparent;
+                            color: $black-dark;
+                            cursor: pointer;
+                            transition: $fast;
+                            &:hover,
+                            &.active{
+                                font-weight: 600;
+                            }
+                            @include media(sm){
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+                .no-filter{
+                    font-size: 14px;
+                    color: $black-dark;
+                }
+            }
+            .filter{
+                width: 100%;
+                padding: 22px 0;
+                border-top: 1px solid #E7E7E7;
+                .filter-title{
+                    font-size: 1rem;
+                    color: $red;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 0;
+                    outline: none;
+                    background: transparent;
+                    width: 100%;
+                    font-weight: 600;
+
+                    i{
+                        color: $red;
+                        font-size: 12px;
+                    }
+             
+                }
+                ul{
+                    list-style: none;
+                    margin-top: 22px;
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 10px;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    li{
+
+                        button{
+                            font-size: 14px;
+                            border: 0;
+                            outline: none;
+                            background: #EEE;
+                            color: $black-dark;
+                            cursor: pointer;
+                            transition: $fast;
+                            border-radius: 4px;
+                            padding: 6px 12px;
+                            &:hover,
+                            &.active{
+                                font-weight: 600;
+                            }
+                            i{
+                                color: $black-dark;
+                                font-size: 12px;
+                                margin-right: 5px;
+                            }
+                            @include media(sm){
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+            // Dropdown Sub
+            .dropdown-subfilter{
+                border-top: 0;
+                margin-bottom: 0;
+                padding: 5px 0;
+                .dropdown-title{
+                    text-transform:none;
+                    font-size: 14px;
+                    @include media(sm){
+                        font-size: 1rem;
+                    }
+                }
+                li{
+                    button{
+                        i{
+                            color: #E7E7E7;
+                            margin-right: 5px;
+                        }
+                        &.active{
+                           
+                            i{
+                                color: $red;
+                                background: $red;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .price-filter-container{
+                width: 100%;
+                .irs--flat{
+                    width: 96%;
+                }
+                .irs--flat .irs-bar,
+                .irs--flat .irs-from,
+                .irs--flat .irs-to,
+                .irs-handle:hover > i:first-child,
+                .irs-handle:hover > i:first-child,
+                .irs--flat .irs-handle > i:first-child {
+                    background-color: $red;
+                }
+                .irs--flat .irs-from:before,
+                .irs--flat .irs-to:before{
+                    border-top-color: $red;
+                }
+                .price-filter-output{
+                    font-size: 14px;
+                    color: $black-dark;
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+                }
+            }
+            .simple-category{
+
+                button{
+                    color: $red !important;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    border: 0;
+                    outline: none;
+                    background: rgba(0, 0, 0, 0);
+                    width: 100%;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+        .filter-apply{
+            // padding-bottom: 0 !important;
+            ul{
+                margin-top: 0 !important;
+             
+                li{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

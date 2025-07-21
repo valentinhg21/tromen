@@ -1,0 +1,60 @@
+.block-portada-reducido{
+    @import '../variables/variables';
+    @import '../components/fonts';
+    @import '../components/media';
+    @import '../components/colors';
+    min-height: 274px;
+    height: 100%;
+    background-color: $black-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+    @include media(sm){
+            min-height: 150px;
+    }
+    .text-bg{
+        position: absolute;
+        h1{
+            font-size: 255px;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-family: $klavika;
+            opacity: 0.1;
+            z-index: 1;
+            margin-bottom: 0;
+            @include media(sm){
+                font-size: 150px;
+            }
+            @include media(xs){
+                font-size: 120px;
+            }
+        }
+    }
+    .content{
+        text-align: center;
+        max-width: 424px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        p{
+            @include media-down(md){
+                font-size: 18px;
+            }
+        }
+    }
+
+    &.bg-gray{
+        .content{
+            max-width: 580px;
+            h1{
+                font-family: $klavika;
+            }
+            h1,p{
+                color: $black-dark;
+            }
+        }
+    }
+}

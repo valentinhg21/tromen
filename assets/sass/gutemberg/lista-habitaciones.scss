@@ -1,0 +1,55 @@
+.block-lista-habitaciones{
+    @import '../variables/variables';
+    @import '../components/media';
+    @import '../components/colors';
+    @import '../components/fonts';
+    padding: 90px 0;
+    background: $white;
+    min-height: 30dvh;
+    @include media(sm){
+        padding: 50px 0;
+    }
+    .card-habitacion{
+        h2{
+            @include media-down(md){
+                font-size: 32px;
+            }
+        
+        }
+        .card-title{
+            margin-top: 40px;
+            @include media(sm){
+                margin-top: 20px;
+            }
+        }
+        .card-image{
+            max-height: 492px;
+            min-height: 492px;
+            height: 100%;
+            position: relative;
+            @include media(md){
+                min-height: 50vh;
+                max-height: 50vh;
+            }
+            @include media(sm){
+                min-height: 45vh;
+                max-height: 45vh;
+            }
+            @include media(xs){
+                min-height: 40vh;
+                max-height: 40vh;
+            }
+            picture,img{
+                object-fit: cover;
+                position: absolute;
+                object-position: center;
+            }
+        }
+        .card-title,
+        .button__container{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

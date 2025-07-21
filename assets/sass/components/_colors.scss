@@ -1,0 +1,41 @@
+$white: #fff;
+$black-dark: #1D1D1B;
+$white-header: #F4F4F4;
+$white-header-hover: #e7e7e7;
+$white-opacity-5: #ffffff75;
+$black: #000;
+$black-filter: #606060;
+$black-opacity-05: rgba(0, 0, 0, 0.5);
+$gray: #F8F7F6;
+$gray-border: #ececec;
+$gray-dark: #A4A7AA;
+$gray-news: #EAEAEA;
+$encabezado: #818181;
+$breadcrum : #575757;
+$red: #E2252D;
+$custom: #fffbfb;
+$gray-input: #DBDBDB;
+.bg-white{
+    background: $white !important;
+}
+
+.bg-gray{
+    background: $gray-news !important;
+    background-color: $gray-news !important;
+}
+
+.bg-black{
+    background: $black;
+}
+
+.bg-news{
+    background: $gray-news;
+}
+
+.bg-red{
+    background: $red;
+}
+.text-red{
+    color: $red !important;
+}
+

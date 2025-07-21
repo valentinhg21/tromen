@@ -1,0 +1,32 @@
+.block-banner{
+    @import '../variables/variables';
+    @import '../components/media';
+    @import '../components/colors';
+    @import '../components/fonts';
+    padding: 60px 0;
+    @include media(xs){
+        padding: 40px 0;
+    }
+    .content{
+        max-width: 570px;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .button__container{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    p{
+        color: $black-dark;
+        font-size: 18px;
+        @include media(xs){
+            font-size: 1rem;
+        }
+    }
+}

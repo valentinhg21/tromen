@@ -1,0 +1,240 @@
+.archive-premier {
+  background: $black;
+  padding-top: 98px;
+  @include media(md) {
+    padding-top: 0;
+  }
+  .hero-custom {
+    position: relative;
+    
+    @include media(xs) {
+      min-height: 50dvh;
+    }
+    align-items: center;
+    .content {
+
+      text-align: left;
+      padding-bottom: 0;
+      width: 100%;
+      max-width: 100%;
+      padding: 0 54px;
+      @include media(md) {
+        padding: 0;
+      }
+      h1 {
+        font-size: 96px;
+        font-family: $klavika;
+        font-weight: 600;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        position: relative;
+        left: -80px;
+        margin-bottom: 20px;
+        @include media(md){
+          left: -10px;
+          font-size: 56px;
+        }
+        @include media(sm) {
+          left: -10px;
+          margin-bottom: 10px;
+          font-size: 48px;
+        }
+      }
+      .desc{
+        display: flex;
+        flex-direction: column;
+        max-width: 570px;
+        width: 100%;
+      }
+      p{
+        font-size: 24px;
+        font-family: $klavika-display;
+        margin-bottom: 0;
+        @include media(sm){
+          font-size: 20px;
+        }
+      }
+    }
+    @include media-down(md){
+      &::before{
+        position: absolute;
+        content: "";
+        max-width: 1302px;
+        width: 100%;
+        height: 104%;
+        border: 1px solid rgb(255 255 255 / 14%);
+        top: 50%;
+        left: 50%;
+  
+        transform: translate(-50%, -49.8%);
+        z-index: 20;
+      }
+    }
+
+  }
+
+  .archive-products-container {
+    background: $black;
+
+    padding-bottom: 62px;
+    @include media(md){
+
+    }
+    position: relative;
+    padding-top: 0;
+    @include media(md) {
+      padding-top: 0;
+    }
+
+
+    .description-cat {
+      padding-bottom: 103px;
+      @include media(md) {
+        padding-bottom: 60px;
+      }
+      @include media(sm) {
+        padding-bottom: 30px;
+      }
+      p {
+        font-size: 32px;
+        font-family: $klavika-display;
+        font-weight: 400;
+        text-align: center;
+        max-width: 841px;
+        width: 100%;
+        margin: 0 auto;
+        @include media(md) {
+          font-size: 24px;
+          padding: 0 5rem;
+        }
+        @include media(sm) {
+          font-size: 20px;
+          padding: 0 1rem;
+        }
+        @include media(xs) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .list-products {
+      padding-top: 34px;
+      display: grid;
+      gap: 1rem;
+      scroll-margin-top: 200px; /* Ajusta según la cantidad de espacio que desees agregar */
+      @include media(md){
+        padding-top: 18px;
+      }
+      .row {
+        gap: 1rem;
+        @include media(sm) {
+          gap: 8px;
+        }
+      }
+      @include media(sm) {
+        .product-image {
+          height: 251px;
+          @include media(xs) {
+            height: 151px;
+          }
+        }
+      }
+      .product-card {
+        position: relative;
+        padding: 1rem;
+        border: 1px solid $black-dark;
+        background: transparent;
+        justify-content: space-between;
+        @include media(sm){
+          padding: 6px;
+          padding-bottom: 12px;
+        }
+        span:not(.tag-text){
+          color: $white;
+          font-size: 1rem;
+          padding: 10px 14px;
+          text-transform: uppercase;
+          margin-top: 1rem;
+          @include media(md) {
+            display: none;
+          }
+        }
+        .product-image {
+          margin-bottom: 0;
+          height: 382px;
+          @include media(lg) {
+            height: 350px;
+          }
+          @include media(md) {
+            height: 250px;
+          }
+          @include media(xs) {
+            height: 150px;
+          }
+          picture,
+          img {
+            object-fit: cover;
+            object-position: center;
+          }
+          &::before {
+            @include bg-presets();
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 5) 100%);
+          }
+        }
+        .product-body {
+ 
+          width: 100%;
+          padding: 14px;
+          min-height: 120px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          margin-top: -5rem;
+          @include media(xs){
+            padding: 0px;
+          }
+          p {
+            color: $white;
+            font-size: 60px;
+            text-transform: lowercase;
+            font-weight: 400;
+            line-height: 100%;
+            &::first-letter {
+              text-transform: capitalize;
+            }
+            @include media(md) {
+              font-size: 22px;
+            }
+            @include media(xs) {
+              width: 80%;
+              font-size: 20px;
+            }
+          }
+          .permalink{
+            bottom: 0;
+            right: 0;
+            border: 1px #1D1D1B;
+            background: #1D1D1B;
+          }
+
+        }
+        &:hover {
+          picture,
+          img {
+            transform: scale(1.02);
+          }
+          .permalink {
+            background: $white;
+            i {
+              color: $black;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

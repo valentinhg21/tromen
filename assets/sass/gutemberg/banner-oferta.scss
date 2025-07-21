@@ -1,0 +1,10 @@
+.block-banner-oferta{
+    @import '../variables/variables';
+    @import '../components/media';
+    @import '../components/colors';
+    @import '../components/fonts';
+    padding-top: 16px;
+    @include media(xs){
+        padding-top: 10px;
+    }
+}

@@ -1,0 +1,43 @@
+// Media
+@import './components/media';
+@import './components/flexbox';
+@import './components/grid';
+@import './components/colors';
+@import './variables/variables';
+@import './components/root';
+
+
+
+// COMPONENTS
+@import './components/positions';
+@import './components/spacing';
+@import './components/buttons';
+@import './components/animations';
+@import './components/hamburguer';
+@import './components/splide';
+@import './components/tinymce';
+@import './components/form';
+@import './components/carousel-products';
+@import './components/mini-cart';
+// LAYOUT
+@import './layout/header';
+@import './layout/dropdown';
+@import './layout/footer';
+
+
+// Blocks
+@import './blocks/block-newsletter';
+
+// TEMPLATES
+@import './templates/home';
+@import './templates/archive';
+@import './templates/archive-product';
+@import './templates/archive-products-sub';
+@import './templates/archive-premier';
+@import './templates/archive-black';
+@import './templates/single';
+@import './templates/single-product';
+@import './templates/checkout';
+@import './templates/thank-you';
+
+
