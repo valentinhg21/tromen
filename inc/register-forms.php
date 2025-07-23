@@ -44,7 +44,7 @@ function send_form_contact() {
         }
 
         foreach ($dataObject as $key => $value) {
-            if (!in_array($key, ['subject', 'action', 'destinatario'])) {
+            if (!in_array($key, ['subject', 'action', 'destinatario', 'activegs', 'gsid'])) {
                 $formattedValue = htmlspecialchars(str_replace(',', ', ', $value));
                 $messageHTML .= "<p><strong>" . ucfirst(strtolower(str_replace('-', ' ', $key))) . ":</strong> $formattedValue</p>";
             }

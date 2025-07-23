@@ -529,6 +529,11 @@ if (form) {
         `${form.dataset.asunto} ${input_subject} recibida desde tromen.com`
       );
 
+      if(form.dataset.activegs === 'on'){
+        formData.append("activegs", form.dataset.activegs );
+        formData.append("gsid", form.dataset.gsid );
+      }
+
       return formData;
     }
 

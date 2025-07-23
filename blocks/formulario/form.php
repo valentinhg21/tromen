@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 <div class="block-form p-relative scroll-margin" >
     <div class="hidden">
         <div class="container">

@@ -3,8 +3,9 @@ $texto = get_field( 'texto' );
 $current_page_slug = get_post_field( 'post_name', get_queried_object_id() );
 $id = get_field( 'id' );
 $asunto = get_field('asunto');
-
 $id_de_la_lista = get_field( 'id_de_la_lista' );
+$activar_spread = get_field( 'activar' );
+$spreadsheet_id = get_field( 'spreadsheet_id' );
 ?>
 
 <div class="row">
@@ -14,6 +15,8 @@ $id_de_la_lista = get_field( 'id_de_la_lista' );
         data-destinatario="<?php echo get_field( 'destinatario' );?>" 
         data-asunto="<?php echo $asunto?>"
         data-envialosimple="<?php echo $id_de_la_lista;?>"
+        data-activegs = "<?php echo $activar_spread ? 'on' : 'off';?>"
+        data-gsid = <?php echo $spreadsheet_id;?>
         >
             <?php
             $flexibleContentPath = dirname(__FILE__) . '/form-content/';
