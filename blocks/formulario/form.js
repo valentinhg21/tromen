@@ -289,6 +289,7 @@ if (form) {
       current_lang === "en"
         ? "Please enter a valid email address."
         : "Ingresa un email válido.";
+    
     const destinatario = document.querySelector(".form").dataset.destinatario;
 
     // Funcion popup
@@ -560,6 +561,25 @@ if (form) {
       }
     }
 
+    // Loading button
+    
+    const loadingSubmit = (status) => {
+        if(status){
+            submit.disabled = true;
+            submit.classList.add('disabled-btn');
+            submit.textContent =  current_lang === "en"
+        ? "Loading..."
+        : "Cargando...";
+            
+        }else{
+          submit.classList.remove('disabled-btn');
+          submit.textContent =  current_lang === "en"
+          ? "Send to"
+          : "Enviar";
+          submit.disabled = false;
+        }
+    }
+
     // Event listener para el botón de envío
     submit.addEventListener("click", (e) => {
       e.preventDefault();
@@ -606,9 +626,10 @@ if (form) {
           error = true;
         }
       });
-
+      
       // Enviar formulario si no hay errores
       if (!error) {
+        loadingSubmit(true)
         const formData = collectFormData();
         fetch(`${url}`, {
           method: "POST",
@@ -644,7 +665,7 @@ if (form) {
               popup.classList.add("show");
               form.reset();
               resetFile();
-              console.log('Aca todo bien')
+              loadingSubmit(false)
             } else {
               messageHTML += `
               <div class="icon error">
@@ -664,6 +685,7 @@ if (form) {
               popup.classList.add("show");
               form.reset();
               resetFile();
+              loadingSubmit(false)
             }
           });
       }

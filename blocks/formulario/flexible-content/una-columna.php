@@ -16,7 +16,7 @@ $spreadsheet_id = get_field( 'spreadsheet_id' );
         data-asunto="<?php echo $asunto?>"
         data-envialosimple="<?php echo $id_de_la_lista;?>"
         data-activegs = "<?php echo $activar_spread ? 'on' : 'off';?>"
-        data-gsid = <?php echo $spreadsheet_id;?>
+        data-gsid = "<?php echo $spreadsheet_id;?>"
         >
             <?php
             $flexibleContentPath = dirname(__FILE__) . '/form-content/';

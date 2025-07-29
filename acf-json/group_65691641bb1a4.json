@@ -677,7 +677,7 @@
             "name": "spreadsheet_id",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Ingresar el nombre de la pestaña del spreadsheet.",
             "required": 1,
             "conditional_logic": [
                 [
@@ -719,5 +719,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753112082
+    "modified": 1753805051
 }

@@ -4,34 +4,43 @@
  */
 ?>
 
+
 <?php
-global $mail; // Define the global variable
+$response = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // $data_drive = [];
+    // foreach ($_POST as $key => $value) {
+    //     // Omitir campos si querés (ejemplo: subject, action, etc)
+    //     if (!in_array($key, ['subject', 'action', 'destinatario', 'activegs', 'gsid'])) {
+    //         $label = ucfirst(strtolower(str_replace('-', ' ', $key)));
+    //         $formattedValue = htmlspecialchars(is_array($value) ? implode(', ', $value) : str_replace(',', ', ', $value));
+    //         $data_drive[$label] = $formattedValue;
+    //     }
+    // }
 
-if (!class_exists('PHPMailer')) {
-    require_once ABSPATH . WPINC . '/class-phpmailer.php';
-    require_once ABSPATH . WPINC . '/class-smtp.php';
+    // Función que envía a Google Sheets
+    $data_drive = [
+        'Nombre' => 'nombre',
+        'Email' => 'apellido',
+        'Mensaje' => 'mensaje'
+    ];
+
+    $driveUrl = "https://script.google.com/macros/s/AKfycbzhF1A31oUVpp5qJwSh8xYEgAS8pv4GFXl0KuExjDzgNTZLZPqp1BOCKRyXsfScWIVlmA/exec";
+    $response_drive = saveDataGoogleSheet($data_drive, $driveUrl);
+    $response = $response_drive ?? 'Error al enviar datos';
+    var_dump($response_drive);
 }
-
-$messageHTML = "TEST";
-$subject = "Consulta de Nombre y Apellido recibida desde tromen.com";
-
-$mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->SMTPDebug = 4;
-$mail->SetFrom('no-reply@tromen.com', 'Tromen'); // Remitente, cambiar según sea necesario
-$mail->AddAddress("federico@zetenta.com");
-$mail->addBCC("mdager@tromen.com");
-$mail->isHTML(true);
-$mail->CharSet = "UTF-8";
-$mail->Subject = $subject;
-$mail->Body = $messageHTML;
-// $mail->Debugoutput = 'error_log';
-
-if (!$mail->Send()) {
-    error_log("Mailer Error: " . $mail->ErrorInfo); // Registrar el error en el log
-    echo "Mailer Error: " . $mail->ErrorInfo;
-} else {
-    echo 'ok';
-}
-
 ?>
+
+
+
+<?php if ($response): ?>
+  <p><strong>Respuesta:</strong> <?= htmlspecialchars($response) ?></p>
+<?php endif; ?>
+
+<form method="POST" action="">
+  <label>Nombre: <input type="text" name="nombre" required></label><br>
+  <label>Email: <input type="email" name="email" required></label><br>
+  <label>Mensaje: <textarea name="mensaje" required></textarea></label><br>
+  <button type="submit">Enviar</button>
+</form>

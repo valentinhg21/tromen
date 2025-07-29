@@ -20,6 +20,7 @@ require_once ('inc/custom-func.php');
 require_once ('inc/register-menus.php');
 require_once ('inc/register-blocks.php');
 require_once ('inc/register-theme-options.php');
+require_once ('inc/register-drive.php');
 require_once ('inc/register-newsletter.php');
 require_once ('inc/register-forms.php');
 require_once ('inc/woocommerce/register-hooks.php');

@@ -684,3 +684,14 @@ a[href="javascript:void(0);"] {
 .select2-container{
   display: none !important;
 }
+
+
+.disabled-btn{
+    background: #dfdfdf !important;
+    border-color: #dfdfdf !important;
+    cursor: not-allowed !important;
+    color: $black !important;
+    &:hover{
+      color: $black !important;
+    }
+}

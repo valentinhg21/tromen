@@ -18,7 +18,8 @@ function send_form_contact() {
 
         $dataObject = $_POST;
         $dataObjectFiles = $_FILES;
-
+        $activegs = isset($_POST['activegs']) ? $_POST['activegs'] : null;
+        $sheetName = isset($_POST['gsid']) ? $_POST['gsid'] : null;
         $messageHTML = "<html><head><title>Tromen</title></head><body>";
         $subject = isset($dataObject['subject']) ? htmlspecialchars($dataObject['subject']) : 'Sin Asunto';
 
@@ -45,9 +46,19 @@ function send_form_contact() {
 
         foreach ($dataObject as $key => $value) {
             if (!in_array($key, ['subject', 'action', 'destinatario', 'activegs', 'gsid'])) {
-                $formattedValue = htmlspecialchars(str_replace(',', ', ', $value));
-                $messageHTML .= "<p><strong>" . ucfirst(strtolower(str_replace('-', ' ', $key))) . ":</strong> $formattedValue</p>";
+                $label = ucfirst(strtolower(str_replace('-', ' ', $key)));
+                $formattedValue = htmlspecialchars(is_array($value) ? implode(', ', $value) : str_replace(',', ', ', $value));
+                $messageHTML .= "<p><strong>$label:</strong> $formattedValue</p>";
+
+                $data_drive[$label] = $formattedValue;
             }
+        }
+
+        if ($activegs === 'on') {
+            $driveUrl = "https://script.google.com/macros/s/AKfycbwPP3X_LFsgRfStT9wDLJC1E2ovOVvqN9_MAZs_d-Gocyt2MdVOo1EIO-ogDxAL1CmCWA/exec";
+            $data_drive['sheet'] = $sheetName;
+            $response_drive = saveDataGoogleSheet($data_drive, $driveUrl);
+
         }
 
         $messageHTML .= "</body></html>";
@@ -83,7 +94,8 @@ function send_form_contact() {
         } else {
             echo json_encode([
                 'success' => true,
-                'message' => 'ok'
+                'message' => 'ok',
+                'data' => $data_drive
             ]);
         }
 
@@ -389,7 +401,6 @@ function get_article_data() {
     // Termina la ejecución del script
     wp_die();
 }
-
 
 add_action('wp_ajax_get_pdv', 'get_pdv');
 add_action('wp_ajax_nopriv_get_pdv', 'get_pdv');

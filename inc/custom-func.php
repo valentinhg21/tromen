@@ -22,7 +22,6 @@ function insert_textarea($acf, $tag = 'p'){
         }
     }
 }
-do_action( 'after_setup_theme', 'insert_textarea' );
 
 function insert_custom_image($url, $w = '100%', $h = '100%', $alt = ''){
     if($url){
@@ -30,7 +29,6 @@ function insert_custom_image($url, $w = '100%', $h = '100%', $alt = ''){
         echo $imageHTML;
     }
 }
-do_action( 'after_setup_theme', 'insert_custom_image' );
 
 function insert_custom_image_json($url, $w = '100%', $h = '100%', $alt = ''){
     if($url){
@@ -38,7 +36,6 @@ function insert_custom_image_json($url, $w = '100%', $h = '100%', $alt = ''){
      
     }
 }
-do_action( 'after_setup_theme', 'insert_custom_image_json' );
 
 function insert_default_image(){
     $root = IMAGE_DEFAULT;
@@ -46,7 +43,7 @@ function insert_default_image(){
     $imageHTML = "<img loading='lazy' src='{$root}' width='750' height='500' alt='En la imagen se muestra el logo de tromen' />";
     return $imageHTML;
 }
-do_action( 'after_setup_theme', 'insert_default_image' );
+
 function insert_button($acf, $mt, $classBtn, $icon = ''){
     if($mt === ''){
         $mt = 3;
@@ -67,7 +64,7 @@ function insert_button($acf, $mt, $classBtn, $icon = ''){
 
 }
 
-do_action( 'after_setup_theme', 'insert_button' );
+
 
 function insert_image($acf, $size = false){
     if(!$size || $size === ''){
@@ -83,7 +80,7 @@ function insert_image($acf, $size = false){
     echo $imageHTML;
     endif;
 }
-do_action( 'after_setup_theme', 'insert_image' );
+
 
 function insert_slug($id = ''){
     if(empty($id)){
@@ -94,7 +91,7 @@ function insert_slug($id = ''){
 
 }
 
-do_action( 'after_setup_theme', 'insert_slug' );
+
 
 
 function insert_acf($acf, $tag, $class = ''){
@@ -116,17 +113,23 @@ function insert_acf($acf, $tag, $class = ''){
     endif;
 }
 
-do_action( 'after_setup_theme', 'insert_afc' );
 
-function sanitizeString($cadena){
-        $originales = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúúûýýþÿ';
-        $modificadas = 'AAAAAAACEEEEIIIIDNOOOOOUUUUYbsaaaaaaaceeeeiiiidnoooooouuuuyyby';
-        $cadena = utf8_decode($cadena);
-        $cadena = strtr($cadena, utf8_decode($originales), $modificadas);
-        $cadena = str_replace(" ", "-", $cadena);
-        return strtolower(utf8_encode($cadena));
+
+function sanitizeString($cadena) {
+    $search  = ['À','Á','Â','Ã','Ä','Å','Æ','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ð','Ñ','Ò','Ó','Ô','Õ','Ö','Ø','Ù','Ú','Û','Ü','Ý','Þ','ß','à','á','â','ã','ä','å','æ','ç','è','é','ê','ë','ì','í','î','ï','ð','ñ','ò','ó','ô','õ','ö','ø','ù','ú','û','ý','ÿ','¿'];
+    $replace = ['A','A','A','A','A','A','AE','C','E','E','E','E','I','I','I','I','D','N','O','O','O','O','O','O','U','U','U','U','Y','P','s','a','a','a','a','a','a','ae','c','e','e','e','e','i','i','i','i','d','n','o','o','o','o','o','o','u','u','u','y','y','?'];
+
+    $cadena = str_replace($search, $replace, $cadena);
+    $cadena = strtolower($cadena);
+    $cadena = preg_replace('/[^a-z0-9\- ]/', '', $cadena); // elimina caracteres no permitidos
+    $cadena = str_replace(' ', '-', $cadena);
+    $cadena = preg_replace('/-+/', '-', $cadena); // elimina guiones dobles
+    $cadena = trim($cadena, '-'); // quita guiones al inicio y final
+
+    return $cadena;
 }
-do_action( 'after_setup_theme', 'sanitizeString' );
+
+
 
 
 function animation($animation = "fade-in-bottom", $delay = 400){
@@ -135,7 +138,7 @@ function animation($animation = "fade-in-bottom", $delay = 400){
     echo $attr;
 }
 
-do_action( 'after_setup_theme', 'add_animation' );
+
 
 
 function limit_description_length($description, $length = 80, $link_text = 'Ver más') {
@@ -146,10 +149,7 @@ function limit_description_length($description, $length = 80, $link_text = 'Ver 
     return $description;
 }
 
-do_action( 'after_setup_theme', 'limit_description_length' );
 
-
-do_action( 'after_setup_theme', 'obtenerIdVideoDeYouTube' );
 
 function idYoutube($url) {
     $videoId = null;
