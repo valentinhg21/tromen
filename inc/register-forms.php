@@ -113,6 +113,7 @@ function send_form_contact() {
 add_action('wp_ajax_send_form_newsletter', 'send_form_newsletter');
 add_action('wp_ajax_nopriv_send_form_newsletter', 'send_form_newsletter');
 function send_form_newsletter(){
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     global $mail; // define the global variable
     if (!is_object($mail) || !is_a($mail, 'PHPMailer')) { // check if $phpmailer object of class PHPMailer exists
         // if not - include the necessary files
@@ -147,6 +148,7 @@ function send_form_newsletter(){
 add_action('wp_ajax_search_products', 'search_products');
 add_action('wp_ajax_nopriv_search_products', 'search_products');
 function search_products() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Asegurarse de que la solicitud sea AJAX y obtener el término
     if (defined('DOING_AJAX') && DOING_AJAX && isset($_GET['term'])) {
         $term = sanitize_text_field($_GET['term']);
@@ -211,6 +213,7 @@ add_action('wp_ajax_get_product_data', 'get_product_data');
 add_action('wp_ajax_nopriv_get_product_data', 'get_product_data');
 // Función para obtener datos de productos filtrados y devolver en formato JSON
 function get_product_data() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Recibir y sanear los parámetros de la solicitud GET
         $featured = isset($_GET['featured']) && $_GET['featured'] === 'true';
@@ -323,6 +326,7 @@ add_action('wp_ajax_get_article_data', 'get_article_data');
 add_action('wp_ajax_nopriv_get_article_data', 'get_article_data');
 // Función para obtener todos los articulos
 function get_article_data() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Verifica si la solicitud es GET
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Valida y sanitiza los datos de entrada
@@ -406,6 +410,7 @@ add_action('wp_ajax_get_pdv', 'get_pdv');
 add_action('wp_ajax_nopriv_get_pdv', 'get_pdv');
 // Función para obtener todos los articulos
 function get_pdv() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Verifica si la solicitud es GET
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Valida y sanitiza los datos de entrada
@@ -519,6 +524,7 @@ function get_pdv() {
 add_action('wp_ajax_get_pdv_ofertas', 'get_pdv_ofertas');
 add_action('wp_ajax_nopriv_get_pdv_ofertas', 'get_pdv_ofertas');
 function get_pdv_ofertas(){
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Verifica si la solicitud es GET
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Valida y sanitiza los datos de entrada
@@ -632,6 +638,7 @@ function get_pdv_ofertas(){
 
 add_filter('weglot_add_json_keys', 'custom_weglot_add_json_keys');
 function custom_weglot_add_json_keys($keys) {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Agregar las claves que quieres traducir
     $keys[] = 'name';            // Traducción de 'name'
     $keys[] = 'permalink';
@@ -646,6 +653,7 @@ function custom_weglot_add_json_keys($keys) {
 add_action('wp_ajax_ajax_mini_cart_product', 'ajax_mini_cart_product');
 add_action('wp_ajax_nopriv_ajax_mini_cart_product', 'ajax_mini_cart_product');
 function ajax_mini_cart_product() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Limpia cualquier salida previa
     if (ob_get_length()) {
         ob_end_clean();
@@ -694,6 +702,7 @@ function ajax_mini_cart_product() {
 add_action('wp_ajax_ajax_update_cart_quantity', 'ajax_update_cart_quantity');
 add_action('wp_ajax_nopriv_ajax_update_cart_quantity', 'ajax_update_cart_quantity');
 function ajax_update_cart_quantity() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     $product_id = intval($_GET['product_id']);
     $quantity = isset($_GET['quantity']) ? intval($_GET['quantity']) : 1;
 
@@ -753,6 +762,7 @@ function ajax_update_cart_quantity() {
 add_action('wp_ajax_ajax_remove_cart_product', 'ajax_remove_cart_product');
 add_action('wp_ajax_nopriv_ajax_remove_cart_product', 'ajax_remove_cart_product');
 function ajax_remove_cart_product() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Verificar que se haya enviado el ID del producto
     if (!isset($_POST['product_id'])) {
         wp_send_json_error(array('error' => 'ID de producto no proporcionado.'));
@@ -797,6 +807,7 @@ function ajax_remove_cart_product() {
 add_action('wp_ajax_validar_cupon_ajax', 'validar_cupon_ajax');
 add_action('wp_ajax_nopriv_validar_cupon_ajax', 'validar_cupon_ajax');
 function validar_cupon_ajax() {
+    while (ob_get_level()) ob_end_clean(); // limpia todos los buffers
     // Obtener el código del cupón enviado por AJAX
     $coupon_code = isset($_POST['coupon_code']) ? sanitize_text_field($_POST['coupon_code']) : '';
 

@@ -277,7 +277,7 @@
         background-color: $white-header !important;
         picture,
         img {
-          object-fit: cover;
+          object-fit: contain;
           background-blend-mode: multiply;
           mix-blend-mode: multiply;
           height: 100% !important;

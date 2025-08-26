@@ -46,12 +46,15 @@ class Walker_Zetenta_Menu extends Walker_Nav_menu {
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 
         if ($item->object == 'product_cat') {
-            $destacar = get_field( 'destacar', $item->ID);
+            $destacar = get_field( 'destacar_link', $item->ID);
+          
             $classDestacar = '';
-            if($destacar === 'Linea black'){
+            if($destacar == 'Linea black'){
                 $classDestacar = 'cat-feature';
-            } else if($destacar === 'Linea Premier'){
+            } else if($destacar == 'Linea Premier'){
                 $classDestacar = 'cat-feature';
+            }else{
+                $classDestacar = '';
             }
             
        

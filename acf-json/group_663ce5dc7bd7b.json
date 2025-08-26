@@ -59,9 +59,9 @@
                 "id": ""
             },
             "choices": {
+                "Ninguno": "Ninguno",
                 "Linea Premier": "Linea Premier",
-                "Linea black": "Linea black",
-                "Ninguno": "Ninguno"
+                "Linea black": "Linea black"
             },
             "default_value": "Ninguno",
             "return_format": "value",
@@ -70,7 +70,9 @@
             "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_68597a8ca7fdf",
@@ -258,13 +260,6 @@
                 "operator": "==",
                 "value": "product_cat"
             }
-        ],
-        [
-            {
-                "param": "nav_menu_item",
-                "operator": "==",
-                "value": "location\/main-menu"
-            }
         ]
     ],
     "menu_order": 0,
@@ -276,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1750697373
+    "modified": 1755024025
 }

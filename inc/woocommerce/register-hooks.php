@@ -22,6 +22,23 @@ function force_shipping_name_from_billing($order, $data) {
         $order->set_shipping_last_name($data['billing_last_name']);
     }
 }
+// WOOCOMMERCE ARMADO DE DIRECCION PARA ZIPPIN
+add_action('woocommerce_checkout_create_order', 'fusionar_shipping_address_custom', 30, 2);
+function fusionar_shipping_address_custom($order, $data) {
+    $calle   = $order->get_shipping_address_1();
+    $numero  = $order->get_meta('_shipping_numero');
+    $piso    = $order->get_shipping_address_2();
+    $barrio  = $order->get_meta('_shipping_barrio');
+
+    // Armar dirección fusionada
+    $direccion = trim($calle);
+    if ($numero) $direccion .= ' ' . $numero;
+    if ($piso)   $direccion .= ' - ' . $piso;
+    if ($barrio) $direccion .= ' - ' . $barrio;
+
+    // Setear nuevo valor de shipping_address_1
+    $order->set_shipping_address_1($direccion);
+}
 function desactivar_select2_css_woocommerce() {
     // Desactiva los scripts de Select2 en WooCommerce
     wp_dequeue_script('select2');
