@@ -155,7 +155,7 @@ function search_products() {
         // Configurar los argumentos para WP_Query
         $args = array(
             'post_type'      => 'product',
-            'posts_per_page' => -1,
+            'posts_per_page' => 10,
             's'              => $term, // Término de búsqueda
         );
 
@@ -175,7 +175,7 @@ function search_products() {
                 $permalink = $product['product_permalink'];
                 $image = $product['product_image'] ? $product['product_image'] : insert_default_image();
                 $main_category = $product['category_name'];
-                $category_name = $product['sub_category_name'];
+                $category_name = '';
                 $product_price = $product['product_price'];
                 $tags = $product['tags_html'];
 

@@ -104,41 +104,49 @@ function breadcrumb_categories() {
     return $breadcrumb_text;
 }
 
-// Función para ajustar el título SEO en productos
-function custom_seo_title_example( $title ) {
-
-    $yoast_separator = ' - ';
-    if (is_product()) {
-        global $post;
-        // Obtener el breadcrumb personalizado
-        $breadcrumb = custom_breadcrumb();
-        // Obtener el nombre del producto
-        $product_name = get_the_title($post->ID);
-        // Definir la marca (puedes hacerla dinámica si es necesario)
-        $brand_name = "Tromen"; // Cambia a la marca que corresponda
-        // Formatear el título personalizado
-        $custom_title = capitalizeWords($breadcrumb). ' ' . capitalizeWords($product_name) .  $yoast_separator . $brand_name;
-        // Retornar el título personalizado
-        return $custom_title;
-    }
-    if (is_product_category()) {
-        global $post;
-        // Obtener el breadcrumb personalizado
-        $breadcrumb = breadcrumb_categories();
-        // Definir la marca (puedes hacerla dinámica si es necesario)
-        $brand_name = "Tromen"; // Cambia a la marca que corresponda
-        // Formatear el título personalizado
-        $custom_title = capitalizeWords($breadcrumb). ' ' .  $yoast_separator . $brand_name;
-        // Retornar el título personalizado
-        return $custom_title;
-    }
-    // // Si no es un producto, devolver el título original
-    return $title;
-
-}
-
 // Filtro para sobrescribir el título de Yoast SEO solo en productos
 add_filter( 'wpseo_title', 'custom_seo_title_example' );
+add_filter( 'wpseo_opengraph_title', 'custom_seo_title_example' );
+add_filter( 'wpseo_twitter_title', 'custom_seo_title_example' );
+function custom_seo_title_example( $title ) {
+    $yoast_separator = ' - ';
+
+    // --- PRODUCTOS ---
+    if ( is_product() ) {
+        global $post;
+
+        // Comprobar si Yoast tiene título custom
+        $yoast_custom_title = get_post_meta( $post->ID, '_yoast_wpseo_title', true );
+        if ( !empty( $yoast_custom_title ) ) {
+            return $yoast_custom_title; // priorizar el de Yoast
+        }
+
+        $breadcrumb    = custom_breadcrumb();
+        $product_name  = get_the_title( $post->ID );
+        $brand_name    = "Tromen";
+
+        return capitalizeWords($breadcrumb) . ' ' . capitalizeWords($product_name) . $yoast_separator . $brand_name;
+    }
+
+    // --- CATEGORÍAS DE PRODUCTO ---
+    if ( is_product_category() ) {
+        $term = get_queried_object();
+
+        // Comprobar si Yoast tiene título custom
+        $yoast_custom_title = get_term_meta( $term->term_id, '_yoast_wpseo_title', true );
+        if ( !empty( $yoast_custom_title ) ) {
+            return $yoast_custom_title;
+        }
+
+        $breadcrumb  = breadcrumb_categories();
+        $brand_name  = "Tromen";
+
+        return capitalizeWords($breadcrumb) . ' ' . $yoast_separator . $brand_name;
+    }
+
+    return $title; // default
+}
+
 
 
 add_action('wp_head', function () {
