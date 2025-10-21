@@ -3,6 +3,27 @@
     "title": "Categoria",
     "fields": [
         {
+            "key": "field_68f7d0e47b5ca",
+            "label": "Titulo de pagina",
+            "name": "titulo_de_pagina",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Agregar titulo personalizado para la pagina categoria",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_678674cc30518",
             "label": "Activar Ecommerce",
             "name": "activar_ecommerce",
@@ -22,27 +43,6 @@
             "ui_on_text": "Si",
             "ui_off_text": "No",
             "ui": 1
-        },
-        {
-            "key": "field_66e83e5d10a3a",
-            "label": "Titulo",
-            "name": "titulo",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Ingresar titulo para la pagina de la categoria.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_663ce95fb5a8e",
@@ -271,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1755024025
+    "modified": 1761073801
 }

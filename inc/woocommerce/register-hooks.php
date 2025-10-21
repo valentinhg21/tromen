@@ -203,20 +203,23 @@ function getAllCategoriesById($id, $todos){
 
     $subcategorie = get_term($id, 'product_cat');
     $category_name = $subcategorie->name;
-
+    $category_permalink = $subcategorie->permalink;
     // Verificar si se encontraron subcategorías
     echo "<ul class='list-categories'>";
     if ( ! empty( $subcategories ) ) {
         // Iterar sobre cada subcategoría y mostrar su nombre
-        echo $todos ? "<li class='subcat'><button type='button' class='active' data-id='$id' data-name='$category_name'>Todos</button></li>" : '';
+        echo $todos ? "<li class='subcat'><a href='$category_permalink' class='active'>Todos</a></li>" : '';
         foreach ( $subcategories as $subcategory ) {
             $destacar = get_field( 'destacar', 'product_cat_' . $subcategory->term_id );
             $permalink = get_term_link($subcategory->term_id);
 
+            // Ajustar la condición: $destacar es TRUE solo si tiene un valor que NO es 'Ninguno' y NO está vacío.
+            $es_destacado = ( ! empty( $destacar ) && $destacar !== 'Ninguno' );
 
-            $li = $destacar ? 
-            "<li class='premier'><a href='$permalink' class='btn btn-md btn-red-transparent'>Ver $subcategory->name</a></li>" : 
-            "<li class='subcat'><button type='button' data-id='$subcategory->term_id' data-name='$subcategory->slug'>$subcategory->name</button></li>";
+            $li = $es_destacado ? 
+                "<li class='premier'><a href='$permalink' class='btn btn-md btn-red-transparent'>Ver $subcategory->name</a></li>" : 
+                "<li class='subcat'><a href='$permalink'>$subcategory->name</a></li>";
+                
             echo $li;
         }
     } else {

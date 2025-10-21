@@ -131,17 +131,30 @@ function custom_seo_title_example( $title ) {
     // --- CATEGORÍAS DE PRODUCTO ---
     if ( is_product_category() ) {
         $term = get_queried_object();
+        $term_id = $term->term_id;
+        $yoast_separator = ' - ';
+        $brand_name = "Tromen";
 
-        // Comprobar si Yoast tiene título custom
-        $yoast_custom_title = get_term_meta( $term->term_id, '_yoast_wpseo_title', true );
-        if ( !empty( $yoast_custom_title ) ) {
-            return $yoast_custom_title;
+        // Leer el meta de Yoast correctamente
+        $yoast_tax_meta = get_option( 'wpseo_taxonomy_meta' );
+        $yoast_title = '';
+
+        if (
+            isset( $yoast_tax_meta['product_cat'][ $term_id ]['wpseo_title'] ) &&
+            ! empty( $yoast_tax_meta['product_cat'][ $term_id ]['wpseo_title'] )
+        ) {
+            $yoast_title = $yoast_tax_meta['product_cat'][ $term_id ]['wpseo_title'];
         }
 
-        $breadcrumb  = breadcrumb_categories();
-        $brand_name  = "Tromen";
+        // Si existe título custom en Yoast, procesarlo
+        if ( $yoast_title && function_exists( 'wpseo_replace_vars' ) ) {
+            $yoast_title = wpseo_replace_vars( $yoast_title, $term );
+            return $yoast_title;
+        }
 
-        return capitalizeWords($breadcrumb) . ' ' . $yoast_separator . $brand_name;
+        // Si no hay título personalizado, usar el tuyo
+        $breadcrumb = breadcrumb_categories();
+        return capitalizeWords($breadcrumb) . $yoast_separator . $brand_name;
     }
 
     return $title; // default

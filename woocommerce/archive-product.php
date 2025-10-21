@@ -52,7 +52,7 @@ get_header(); ?>
 				$image_url = "";
 			}
 		}
-		$title_category = get_field( 'titulo', $category);
+		$title_category = get_field( 'titulo_de_pagina', $category);
 	?>
 	<div class="archive-product" id="<?php echo $category_id;?>">
 		<div class="hero-custom fade" <?php echo $image_url;?>>

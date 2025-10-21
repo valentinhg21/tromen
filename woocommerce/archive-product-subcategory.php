@@ -31,6 +31,7 @@
 
     $query_MaxPrice = $_GET['max_price'] ?? getMaxAndMinPrice()['max_price'];
     $query_MinPrice = $_GET['min_price'] ?? getMaxAndMinPrice()['min_price'];
+    $title_category = get_field( 'titulo_de_pagina', $category);
 ?>
 <input type="hidden" id="currentPage" value=<?php echo wp_kses_post( $paged )?>>
 <div class="archive-subcategory" id="<?php echo $category_id;?>" data-slug="<?php echo $category->slug?>">
@@ -41,7 +42,11 @@
                 <?php if($title_category): ?>
                     <?php echo insert_acf($title_category, 'h1') ?>
                     <?php else: ?>
-                        <h1><?php echo $name; ?> <span><?php single_term_title();?></span></h1>
+                        <?php if($title_category): ?>
+                            <?php insert_acf($title_category, 'h1'); ?>
+                        <?php else: ?>
+                            <h1><?php echo $name; ?> <span><?php single_term_title();?></span></h1>
+                        <?php endif; ?>
                 <?php endif; ?>
              
                 <button type="button" class="filter-order">
