@@ -22,7 +22,10 @@
                 'terms' => $category_id,
             ],
         ],
-        'orderby' => 'menu_order', // Ordenar por el orden del menú
+        'orderby' => [
+            'menu_order' => 'ASC',
+            'title' => 'ASC', // fallback alfabético
+        ],
         'order' => 'ASC', // De forma ascendente
     ];
 
